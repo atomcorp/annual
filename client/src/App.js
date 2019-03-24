@@ -4,7 +4,7 @@ import "./App.css";
 
 class App extends Component {
   componentDidMount() {
-    fetch("/api/hello")
+    fetch("/api/playlist/1pjTl4HGhrtTB2w1WVvcqS")
       .then(res => res.json())
       .then(result => {
         console.log(result);
