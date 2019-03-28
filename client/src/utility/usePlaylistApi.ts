@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-import { PlaylistId } from '../types';
+import { PlaylistId, SpotifyPlaylistApi } from '../types';
+import parsePlaylistData from './parsePlaylistData';
 
-type RequestApiType = Promise<{}>;
+type RequestApiType = Promise<SpotifyPlaylistApi>;
 
 const requestPlaylist = (playlistId: PlaylistId): RequestApiType => {
   return fetch(`/api/playlist/${playlistId}`)
     .then((res) => res.json())
-    .then((result) => result);
+    .then((result) => parsePlaylistData(result));
 };
 
 const usePlaylistApi = (playlistId: PlaylistId): RequestApiType => {
