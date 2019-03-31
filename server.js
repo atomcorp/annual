@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request"); // "Request" library
 const { client_id, client_secret } = require("./secret");
-
+console.log(client_id)
 // your application requests authorization
 const authOptions = {
   url: "https://accounts.spotify.com/api/token",

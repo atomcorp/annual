@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react';
 
-import { PlaylistId, SpotifyPlaylistApi } from '../types';
+import { PlaylistId, SpotifyPlaylistApi, Playlist } from '../types';
 import parsePlaylistData from './parsePlaylistData';
 
 type RequestApiType = Promise<SpotifyPlaylistApi>;
 
-const requestPlaylist = (playlistId: PlaylistId): RequestApiType => {
-  return fetch(`/api/playlist/${playlistId}`)
+async function requestPlaylist(playlistId: PlaylistId): Promise<Playlist> {
+  const result = await fetch(`/api/playlist/${playlistId}`)
     .then((res) => res.json())
     .then((result) => parsePlaylistData(result));
+  return result;
 };
 
-const usePlaylistApi = (playlistId: PlaylistId): RequestApiType => {
-  const [playlist, setPlaylist] = useState();
+const usePlaylistApi = (playlistId: PlaylistId): Playlist => {
+  const [playlist, setPlaylist] = useState<Playlist>({ tracks: [] });
 
   useEffect(() => {
-    setPlaylist(requestPlaylist(playlistId));
+    requestPlaylist(playlistId).then((res: Playlist) => {
+      setPlaylist(res)
+    });
   }, [playlistId]);
 
   return playlist;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { usePlaylistApi } from '../../utility';
-import { PlaylistId } from '../../types';
+import { PlaylistId, Playlist as PlaylistType } from '../../types';
 
 type PropsType = {
   id: PlaylistId;
@@ -9,7 +9,7 @@ type PropsType = {
 
 const Playlist = (props: PropsType) => {
   const playlistData = usePlaylistApi(props.id);
-  console.log(playlistData);
+  console.log(playlistData)
   return (
     <section>
       <div>Playlist: {props.id}</div>

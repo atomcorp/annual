@@ -5,13 +5,13 @@ import './App.css';
 import { Playlists } from './components';
 
 class App extends Component {
-  componentDidMount() {
-    fetch('/api/playlist/1pjTl4HGhrtTB2w1WVvcqS')
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-      });
-  }
+  // componentDidMount() {
+  //   fetch('/api/playlist/1pjTl4HGhrtTB2w1WVvcqS')
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       console.log(result);
+  //     });
+  // }
   render() {
     return (
       <div className="App">
