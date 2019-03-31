@@ -71,5 +71,6 @@ export type Track = {
   name: string;
 }
 export type Playlist = {
-  tracks: Track[] | [];
+  name: string;
+  tracks: Track[];
 }

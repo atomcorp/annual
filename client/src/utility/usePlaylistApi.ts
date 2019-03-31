@@ -13,7 +13,7 @@ async function requestPlaylist(playlistId: PlaylistId): Promise<Playlist> {
 };
 
 const usePlaylistApi = (playlistId: PlaylistId): Playlist => {
-  const [playlist, setPlaylist] = useState<Playlist>({ tracks: [] });
+  const [playlist, setPlaylist] = useState<Playlist>({ tracks: [] , name: ''});
 
   useEffect(() => {
     requestPlaylist(playlistId).then((res: Playlist) => {

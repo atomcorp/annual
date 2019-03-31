@@ -8,11 +8,17 @@ type PropsType = {
 };
 
 const Playlist = (props: PropsType) => {
-  const playlistData = usePlaylistApi(props.id);
-  console.log(playlistData)
+  const data = usePlaylistApi(props.id);
+  console.log(data)
   return (
     <section>
+      <h1>{data.name}</h1>
       <div>Playlist: {props.id}</div>
+      <ol>
+       
+          {data.tracks.map((track, i) =>  <li key={i}>{track.artists.join(', ')} - {track.name}</li>)}
+        
+      </ol>
     </section>
   );
 };
