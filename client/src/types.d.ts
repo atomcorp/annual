@@ -26,7 +26,7 @@ export type SpotifyPlaylistApi = {
           track_number: number;
           type: string;
           uri: string;
-        }
+        };
       }];
       limit: number;
       next?: any;
@@ -36,7 +36,5 @@ export type SpotifyPlaylistApi = {
     };
   };
 };
-export type PlaylistTrack = {
-
-}
-export type PlaylistType = 
+export type PlaylistTrack = {};
+export type PlaylistType = {};
