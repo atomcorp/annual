@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import './App.css';
 
-import { Playlists } from './components';
+import Router from './Router';
 
 class App extends Component {
   // componentDidMount() {
@@ -14,9 +14,11 @@ class App extends Component {
   // }
   render() {
     return (
-      <div className="App">
-        <Playlists />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Router />
+        </div>
+      </BrowserRouter>
     );
   }
 }
