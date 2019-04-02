@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {BrowserRouter} from 'react-router-dom';
 import './App.css';
 
-import { Playlists } from './components';
+import Router from './Router';
 
 class App extends Component {
-  componentDidMount() {
-    fetch('/api/playlist/1pjTl4HGhrtTB2w1WVvcqS')
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-      });
-  }
+  // componentDidMount() {
+  //   fetch('/api/playlist/1pjTl4HGhrtTB2w1WVvcqS')
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       console.log(result);
+  //     });
+  // }
   render() {
     return (
-      <div className="App">
-        <Playlists />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Router />
+        </div>
+      </BrowserRouter>
     );
   }
 }
