@@ -1,6 +1,7 @@
 import { PlaylistIds } from './types';
 
 export const playlistIds: PlaylistIds = {
+  '∞': '0yfGeOx3dcRScCztL9ssuB', 
   '2019': '1pjTl4HGhrtTB2w1WVvcqS',
   '2018': '42ROzUApBgyUW8nuHGP6w7',
   '2017': '6ar2Tjv1wy3WwZx8qucFiq',

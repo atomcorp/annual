@@ -8,7 +8,7 @@ const Playlists = () => (
   <section>
     <ul>
       {Object.keys(playlistIds).map((playlistYear) => (
-        <li>
+        <li key={playlistYear}>
           <Link key={playlistYear} to={`/playlist/${playlistIds[playlistYear]}`}>
             {playlistYear}
           </Link>
