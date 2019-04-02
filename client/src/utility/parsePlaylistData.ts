@@ -1,4 +1,4 @@
-import { SpotifyPlaylistApi, Playlist } from '../types';
+import {SpotifyPlaylistApi, Playlist} from '../types';
 
 const parsePlaylistData = (data: SpotifyPlaylistApi): Playlist => ({
   name: data.body.name,
@@ -6,9 +6,10 @@ const parsePlaylistData = (data: SpotifyPlaylistApi): Playlist => ({
     const artists = item.track.artists.map((artist) => artist.name);
     const name = item.track.name;
     return {
-      artists, name
-    }
-  })
-})
+      artists,
+      name,
+    };
+  }),
+});
 
 export default parsePlaylistData;
